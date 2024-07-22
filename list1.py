@@ -15,7 +15,11 @@
 
 def match_ends(words):
     # +++your code here+++
-    return
+    count = 0
+    for word in words:
+        if len(word) >=2 and word[0] == word[-1]:
+            count= count + 1
+    return count
 
 
 # B. front_x
@@ -28,9 +32,10 @@ def match_ends(words):
 
 def front_x(words):
     # +++your code here+++
-    return
-
-
+    x_list= [s for s in words if s[0]== 'x']
+    not_x_list= [s for s in words if not s[0]== "x"]
+    return sorted(x_list) + sorted(not_x_list)
+  
 # C. sort_last
 # Given a list of non-empty tuples, return a list sorted in increasing
 # order by the last element in each tuple.
@@ -40,7 +45,7 @@ def front_x(words):
 
 def sort_last(tuples):
     # +++your code here+++
-    return
+    return sorted(tuples, key=lambda x: x[-1])
 
 
 # Simple provided test() function used in main() to print
